@@ -5,8 +5,8 @@
 // I quadrati fateli prima a mano e poi con javascript.
 $(document).ready(function(){
 
-  $('.quadrato').click(function(){
-     $(this).each(function(){
+  $('.quadrato').each(function(){
+     $(this).click(function(){
        $.ajax(
          {
          url : "https://flynn.boolean.careers/exercises/api/random/int",
