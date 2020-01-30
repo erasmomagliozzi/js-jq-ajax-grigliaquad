@@ -14,12 +14,18 @@ $(document).ready(function(){
          success : function (data, stato){
            $('.quadrato').html(data.response);
            console.log(data);
+           if(data.response <= 5){
+             $('.quadrato').addClass('yellow').removeClass('green');
+           }else{
+             $('.quadrato').addClass('green');
+           }
          },
          error : function (richiesta, stato, errori) {
            alert("E' avvenuto un errore. " + errore);
-           }
+         }
+
        });
-       
+
 
 
 
