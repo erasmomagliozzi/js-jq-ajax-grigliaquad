@@ -7,17 +7,18 @@ $(document).ready(function(){
 
   $('.quadrato').each(function(){
      $(this).click(function(){
+       var element = $(this);
        $.ajax(
          {
          url : "https://flynn.boolean.careers/exercises/api/random/int",
          method : "GET",
          success : function (data, stato){
-           $('.quadrato').html(data.response);
-           console.log(data);
+           console.log(element);
+           $(element).html(data.response);
            if(data.response <= 5){
-             $('.quadrato').addClass('yellow').removeClass('green');
+             $(element).addClass('yellow').removeClass('green');
            }else{
-             $('.quadrato').addClass('green');
+             $(element).addClass('green');
            }
          },
          error : function (richiesta, stato, errori) {
